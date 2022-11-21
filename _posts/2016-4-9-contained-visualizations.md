@@ -15,7 +15,7 @@ I recently embarked on a challenge to visualize a model defined at every voxel i
 We have over 28K models, each built from a set of ~100 statistical brain maps (yes, tiny data) with 132 cognitive concepts from the [Cognitive Atlas](http://www.cognitiveatlas.org). When you think of the internet, it's not such big data, but it's still enough to make putting it in a single figure challenging. Master Poldrack had sent me [a paper](http://gallantlab.org/_downloads/2012.Huth.etal1.pdf) from the Gallant Lab, and directed me to Figure 2:
 
 <div>
-    <img src="/assets/images/posts/contained-visualizations/gallant.png" alt="Gallant lab figure 2" title="Gallant Lab Figure 2" style="width:600px"/>
+    <img src="/v1/assets/images/posts/contained-visualizations/gallant.png" alt="Gallant lab figure 2" title="Gallant Lab Figure 2" style="width:600px"/>
 </div>
 
 I had remembered this work from the [HIVE](https://icme.stanford.edu/computer-resources/hive) at Stanford, and what I took away from it was the idea for the strategy. If we wanted to look at the entire model for a concept, that's easy, look at the [brain maps](http://www.neurovault.org/collections/1170). If we want to understand all of those brain maps at one voxel, then the visualization needs to be voxel-specific. This is what I decided to do.
@@ -135,19 +135,19 @@ My first idea was to do a sort of "double clustering." I scribbled the following
 Yeah, please don't read that. The summary is that I would show clusters of concepts, and within each concept cluster would be a cluster of images. Distance on the page, from left to right, would represent the contribution of the concept cluster to the model at the voxel. This turned out pretty cool:
 
 <div>
-    <img src="/assets/images/posts/contained-visualizations/attempt1.png" style="float:right;width:800px"/>
+    <img src="/v1/assets/images/posts/contained-visualizations/attempt1.png" style="float:right;width:800px"/>
 </div>
 
 You can mouse over a node, which is a contrast image (a brain map) associated with a particular cognitive concept, and see details (done by way of [tipsy](http://bl.ocks.org/ilyabo/1373263)). Only concepts that have a weight (weight --> importance in the model) that is not zero are displayed (and this reduces the complexity of the visualization quite a bit), and the nodes are colored and sized based on their value in the original brain map (red/big --> positive, and blue/small --> negative):
 
 <div>
-    <img src="/assets/images/posts/contained-visualizations/tipsy.png" style="width:600px"/>
+    <img src="/v1/assets/images/posts/contained-visualizations/tipsy.png" style="width:600px"/>
 </div>
 
 You can use the controls in the top right to expand the image, save as SVG, link to the code, or read about the application:
 
 <div>
-    <img src="/assets/images/posts/contained-visualizations/controls.png" style="width:200px"/>
+    <img src="/v1/assets/images/posts/contained-visualizations/controls.png" style="width:200px"/>
 </div>
 
 You can also select a region of choice from the dropdown menu, which uses [select2](https://select2.github.io/) to complete your choice. At first I showed the user the voxel location I selected as "representative" for the region, but I soon realized that there were quite a few large regions in the [AAL atlas](http://www.gin.cnrs.fr/AAL2), and that it would be incorrect and misleading to select a representative voxel. To embrace the variance within a region but still provide meaningful labels, I implemented it so that a user can select a region, and a random voxel from the region is selected:
@@ -168,13 +168,13 @@ You can also select a region of choice from the dropdown menu, which uses [selec
 Typically, Flask view functions return... views :). In this case, the view returned is the original one that I wrote (the function is called `voxel`) to render a view based on a voxel id (from 1..28K). The user just sees a dropdown to select a region:
 
 <div>
-    <img src="/assets/images/posts/contained-visualizations/region_selector.png" style="width:300px"/>
+    <img src="/v1/assets/images/posts/contained-visualizations/region_selector.png" style="width:300px"/>
 </div>
 
 Finally, since there are multiple images tagged with the same concept in an image, you can mouse over a concept label to highlight those nodes in the image. You can also mouse over a concept label to highlight all the concepts associated with the image. We also obtain a sliced view of the image from NeuroVault to show to the user.
 
 <div>
-    <img src="/assets/images/posts/contained-visualizations/image_highlight.png" style="width:800px"/>
+    <img src="/v1/assets/images/posts/contained-visualizations/image_highlight.png" style="width:800px"/>
 </div>
 
 **[Check out the full demo](http://vsoch.github.io/cogat_voxel/)**
@@ -286,31 +286,31 @@ Boum! Ok, now back to the visualization!
 For this attempt, I wanted to render a concept tree in the browser, with each node in the tree corresponding to a cognitive concept, and colored by the "importance" (weight) in the model. As before, <span style="color:orangered">red</span> would indicate positive weight, and <span style="color:cornflowerblue">blue</span> negative (this is a standard in brain imaging, by the way). To highlight the concepts that are relevant for the particular voxel model, I decided to make the weaker nodes more transparent, and nodes with no contribution (weight = 0) completely invisible. However, I would maintain the tree structure to give the viewer a sense of distance in the ontology (distance --> similarity). This tree would also solve the problem of understanding relationships between concepts. They are connected!
 
 <div>
-    <img src="/assets/images/posts/contained-visualizations/tree.png" style="width:800px"/>
+    <img src="/v1/assets/images/posts/contained-visualizations/tree.png" style="width:800px"/>
 </div>
 
 As before, mousing over a node provides more information:
 
 <div>
-    <img src="/assets/images/posts/contained-visualizations/node_info.png" style="width:600px"/>
+    <img src="/v1/assets/images/posts/contained-visualizations/node_info.png" style="width:600px"/>
 </div>
 
 and the controls are updated slightly to include a "find in page" button:
 
 <div>
-    <img src="/assets/images/posts/contained-visualizations/controls_v2.png" style="width:200px"/>
+    <img src="/v1/assets/images/posts/contained-visualizations/controls_v2.png" style="width:200px"/>
 </div>
 
 Which, when you click on it, brings up an overlay where you can select any cogntiive concepts of your choice with clicks, and they will light up on the tree!
 
 <div>
-    <img src="/assets/images/posts/contained-visualizations/highlight.png" style="width:800px"/>
+    <img src="/v1/assets/images/posts/contained-visualizations/highlight.png" style="width:800px"/>
 </div>
 
 If you want to know the inspiration for this view, it's a beautiful installation at the Stanford Business School that I'm very fond of:
 
 <div>
-    <img src="/assets/images/posts/contained-visualizations/wall.jpg" style="width:400px"/>
+    <img src="/v1/assets/images/posts/contained-visualizations/wall.jpg" style="width:400px"/>
 </div><br><br>
 
 The labels were troublesome, because if I rendered too many it was cluttered and unreadable, and if I rendered too few it wasn't easy to see what you were looking at without mousing over things. I found a [rough function](http://bl.ocks.org/larskotthoff/11406992) that helped a bit, but my quick fix was to simply limit the labels shown based on the number of images (count) and the regression parameter weight:

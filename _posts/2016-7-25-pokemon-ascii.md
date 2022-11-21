@@ -17,7 +17,7 @@ The final avatar might look something like this:
 This is the "retro" design, and in fact we can choose from one of many:
 
 <div>
-    <img src="/assets/images/posts/pokemon-ascii/gravatar_designs.png" style="width:800px"/>
+    <img src="/v1/assets/images/posts/pokemon-ascii/gravatar_designs.png" style="width:800px"/>
 </div><br>
 
 
@@ -25,7 +25,7 @@ This is the "retro" design, and in fact we can choose from one of many:
 I recently started making a command line application that would require user authentication. To make it more interesting, I thought it would be fun to give the user an identity, or minimally, something nice to look at at starting up the application. My mind immediately drifted to avatars, because an access token required for the application could equivalently be used as a kind of unique identifier, and a hash generated to produce an avatar. But how can we show any kind of graphic in a terminal window?
 
 <div>
-    <img src="/assets/images/posts/pokemon-ascii/terminal.png" style="width:800px"/>
+    <img src="/v1/assets/images/posts/pokemon-ascii/terminal.png" style="width:800px"/>
 </div><br>
 
 
@@ -63,7 +63,7 @@ Using the <a href="http://pokemondb.net/pokedex/national" target="_blank">Pokemo
 The Pokemon Database has a unique ID for each pokemon, and so those IDs are the keys for the dictionary (the json linked above). I also store the raw images, in case they are needed and not available, or (in the future) if we want to generate the ascii's programatically (for example, to change the size or characters) we need these images. I chose this "pre-generate" strategy over creating the ascii from the images on the fly because it's slightly faster, but there are definitely good arguments for doing the latter.
 
 <div>
-    <img src="/assets/images/posts/pokemon-ascii/pokemon.png" style="width:1000px"/>
+    <img src="/v1/assets/images/posts/pokemon-ascii/pokemon.png" style="width:1000px"/>
 </div><br>
 
 
@@ -108,13 +108,13 @@ float(1.2222222222).__sizeof__()
 Nuts! I should probably not get distracted here. I ultimately decided it would be most reasonable to just make this decision visually. For example, the `@` character is a lot thicker than a `.`, so it would be farther to the right in the list. My first efforts rendering a pokemon looked something like this:
 
 <div>
-    <img src="/assets/images/posts/pokemon-ascii/attempt1.png" style="width:1000px"/>
+    <img src="/v1/assets/images/posts/pokemon-ascii/attempt1.png" style="width:1000px"/>
 </div><br>
 
 I then was browsing around, and found a <a href="https://www.hackerearth.com/notes/beautiful-python-a-simple-ascii-art-generator-from-images/" target="_blank">beautifully done implementation</a>. The error in my approach was not normalizing the image first, and so I was getting a poor mapping between image values and characters. With the normalization, my second attempt looked much better:
 
 <div>
-    <img src="/assets/images/posts/pokemon-ascii/attempt2.png" style="width:1000px"/>
+    <img src="/v1/assets/images/posts/pokemon-ascii/attempt2.png" style="width:1000px"/>
 </div><br>
 
 I ultimately modified this code sightly to account for the fact that characters tend to be thinner than they are tall. This meant that, even though the proportion / size of the image was "correct" when rescaling it, the images always looked too tall. To adjust for this, I modified the functions to adjust the new height by a factor of 2:
@@ -171,7 +171,7 @@ def get_avatar(string,pokemons=None,print_screen=True,include_name=True):
 On the surface, this seems very silly, however there are many good reasons that I would make something like this. First, beautiful, or fun details in applications make them likable. I would want to use something that, when I fire it up, subtly reminds me that in my free time I am a Pokemon master. Second, a method like this could be useful for security checks. A user could learn some image associated with his or her access token, and if this ever changed, he/she would see a different image. Finally, a detail like this can be associated with different application states. For example, whenever there is a "missing" or "not found" error returned for some function, I could show Psyduck, and the user would learn quickly that seeing Psyduck means "uhoh." 
 
 <div>
-    <img src="/assets/images/posts/pokemon-ascii/404.png" style="width:800px"/>
+    <img src="/v1/assets/images/posts/pokemon-ascii/404.png" style="width:800px"/>
 </div>
 
 There are many more nice uses for simple things like this, what do you think?

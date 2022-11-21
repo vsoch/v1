@@ -8,7 +8,7 @@ If you are like me, you probably peruse a million websites in a day. Yes, you're
 <strong>TLDR</strong>: I made a temporary <a href="https://vsoch.github.io/resource-saver" target="_blank">stuff saver</a> using service workers. Read on to learn more.
 
 <div>
-    <img src="/assets/images/posts/service-worker-resource-saver/interface.png" style="width:1000px"/>
+    <img src="/v1/assets/images/posts/service-worker-resource-saver/interface.png" style="width:1000px"/>
 </div><br>
 
 
@@ -60,7 +60,7 @@ Note that the "Stuff" object is simply a controller for adding / updating conten
 The magic of what the worker does, then, is encompassed in the <a href="https://github.com/vsoch/resource-saver/blob/master/service-worker.js" target="_blank">"service-worker.js" file</a>, which I borrowed from Google's example application. This is important to take a look over and understand, because it defines different event listeners (for example, "activate" and "message") that describe how our service worker will handle different events. If you look through this file, you are going to see a lot of the function <a href="https://www.w3.org/TR/service-workers/#service-worker-postmessage" target="_blank">"postMessage"</a>, and actually, this is the service worker API way of getting some kind of event from the browser to the worker. It makes sense, then, if you look in our <a href="https://github.com/vsoch/resource-saver/blob/master/js/sw.js" target="_blank">javascript file</a> that has different functions fire off when the user interacts with buttons on the page, you are going to see a ton of a function <a href="https://github.com/vsoch/resource-saver/blob/master/js/sw.js#L152" target="_blank">saveMessage</a> that opens up a Message Channel and sends our data to the worker. It's like browser ping pong, with data instead of ping pong balls. You can view in the console of the <a href="https://vsoch.github.io/resource-saver" target="_blank">demo</a> and type in any of "MessageChannel", "sendMessage" or "postMessage" to see the functions in the browser:
 
 <div>
-    <img src="/assets/images/posts/service-worker-resource-saver/functions.png" style="width:1000px"/>
+    <img src="/v1/assets/images/posts/service-worker-resource-saver/functions.png" style="width:1000px"/>
 </div><br>
 
 If we look closer at the sendMessage function, it starts to make sense what is going on. What is being passed and forth are <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promises</a>, which help developers (a bit) with the callback hell that is definitive of Javascript. I haven't had huge experience with using Promises (or service workers), but I can tell you this is something to start learning and trying out if you plan to do any kind of web development:
@@ -96,13 +96,13 @@ function sendMessage(message) {
 The documentation is provided from the original example, and it's beautiful! The simple functionality I added is to parse the saved content into different types (images, script/style and other content)
 
 <div>
-    <img src="/assets/images/posts/service-worker-resource-saver/images.png" style="width:400px"/>
+    <img src="/v1/assets/images/posts/service-worker-resource-saver/images.png" style="width:400px"/>
 </div><br>
 
 ...as well as download a static list of all of your resources (for quick saving).
 
 <div>
-    <img src="/assets/images/posts/service-worker-resource-saver/download.png" style="width:200px"/>
+    <img src="/v1/assets/images/posts/service-worker-resource-saver/download.png" style="width:200px"/>
 </div><br>
 
 

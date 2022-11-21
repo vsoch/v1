@@ -8,9 +8,9 @@ highlighter:      rouge
 
 paginate: 20
 paginate_path: "page:num"
-baseurl: /
+baseurl: /v1/
 domain_name: 'vsoch.github.io'
-google_analytics: 'UA-67197905-1'
+# google_analytics: 'UA-67197905-1'
 disqus: true
 disqus_shortname: 'vsoch'
 

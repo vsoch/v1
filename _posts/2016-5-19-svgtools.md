@@ -46,7 +46,7 @@ This allowed me to transform this png image:
 into a "pointilism svg" (this is for a sampling rate of 8, meaning that I add more space between the points)
 
 <div>
-    <img src="/assets/images/posts/svgtools/body.png" style="width:250px"/>
+    <img src="/v1/assets/images/posts/svgtools/body.png" style="width:250px"/>
 </div>
 
 [actual svg can be seen here](https://github.com/vsoch/svgtools/blob/master/examples/data/bodymap.svg)
@@ -62,25 +62,25 @@ A little note about ontologies - they are usually intended for a very specific p
 I then had my svg for annotation, and I had my terms, how to do the annotation? I built myself a [small interface](http://vsoch.github.io/bodymap/) for this goal exactly. You load your svg images and labels, and then draw circles around points you want to select, for example here I have selected the head:
 
 <div>
-    <img src="/assets/images/posts/svgtools/head.png" style="width:350px"/>
+    <img src="/v1/assets/images/posts/svgtools/head.png" style="width:350px"/>
 </div>
 
 and then you can select terms from your vocabulary:
 
 <div>
-    <img src="/assets/images/posts/svgtools/terms.png" style="width:800px"/>
+    <img src="/v1/assets/images/posts/svgtools/terms.png" style="width:800px"/>
 </div>
 
 and click annotate! The selection changes to indicate that the annotation has been done.
 
 <div>
-    <img src="/assets/images/posts/svgtools/annotate.png" style="width:350px"/>
+    <img src="/v1/assets/images/posts/svgtools/annotate.png" style="width:350px"/>
 </div>
 
 Selecting a term and clicking "view" will highlight the annotation, in case you want to see it again. When you are finished, you can save the svg, and see that the annotation is present for the selected paths via an added class attribute:
 
 <div>
-    <img src="/assets/images/posts/svgtools/svg.png" style="width:800px"/>
+    <img src="/v1/assets/images/posts/svgtools/svg.png" style="width:800px"/>
 </div>
 
 This is the simple functionality that I desired for this first round, and I imagine I'll add other things as I need them. And again, ideally we will have automated methods to achieve these things in the long run, and we would also want to be able to take common data structures and images, convert them seamlessly into interactive components, and maybe even have a database for users to choose from. Imagine if we had a database of standard components for use, we could use them as features to describe visualizations, and get a sense of what the visualization is representing by looking at it statically. We could use methods from image processing and computer vision to generate annotated components automatically, and blur the line between what is data and what is visual. Since this is under development and my first go, I'll just start by doing this annotation myself. I just created the [svgtools package](pypi.python.org/pypi/svgtools) and this interface today, so stay tuned for more updates!
