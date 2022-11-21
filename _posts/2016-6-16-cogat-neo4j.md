@@ -14,7 +14,7 @@ I've been working on the start of [version 2.0](https://github.com/vsoch/cogat-d
 
 
 <div>
-    <img src="/assets/images/posts/cogat-neo4j/view_source.png" style="width:800px"/>
+    <img src="/v1/assets/images/posts/cogat-neo4j/view_source.png" style="width:800px"/>
 </div><br>
 
 
@@ -155,25 +155,25 @@ and you can see that generally, I just need to define the fields, relations, and
 Functionality for any node in the graph can be added to the "Node" class. The function "link" for example, will generate a relationship between an object and some other node, and "cypher" will produce node and link objects that can be rendered immediately into a [neo4j gist](http://portal.graphgist.org/graph_gists/a59e24c4-88a4-49c4-8933-a7b7637a7cca). This is where I see the intersection of Django and Neo4j - adding graph functions to their standard model. Now how to visualize the graph? I like developing my own visualizations, and made a general, searchable graph run by the application across all node types:
 
 <div>
-    <img src="/assets/images/posts/cogat-neo4j/graph.png" style="width:800px"/>
+    <img src="/v1/assets/images/posts/cogat-neo4j/graph.png" style="width:800px"/>
 </div><br>
 
 However I realized that a user is going to want more power than that to query, make custom views, and further, share them. The makers of Neo4j were smart, and realized that people might want to share snippets of code as [github gists](https://gist.github.com/) to make what they call a [graph gist](http://portal.graphgist.org/about). I figured why not generate a URL to render this [cypher code](http://neo4j.com/developer/cypher-query-language/) that can then immediately be rendered into a preview, and then optionally exported and saved by the user? The awesome part of this is that it sends the computing of the graph part off of the Cognitive Atlas server, and you can save views of the graph. For example, here is a gist that shows a view of the [working memory fMRI task paradigm](http://portal.graphgist.org/graph_gists/a59e24c4-88a4-49c4-8933-a7b7637a7cca). If you're a visual learner, you can learn from looking at the graph itself:
 
 <div>
-    <img src="/assets/images/posts/cogat-neo4j/graph1.png" style="width:1000px"/>
+    <img src="/v1/assets/images/posts/cogat-neo4j/graph1.png" style="width:1000px"/>
 </div><br>
 
 You can see example cypher queries, with results rendered into clean tables:
 
 <div>
-    <img src="/assets/images/posts/cogat-neo4j/graph2.png" style="width:1000px"/>
+    <img src="/v1/assets/images/posts/cogat-neo4j/graph2.png" style="width:1000px"/>
 </div><br>
 
 and hey, you can write your own queries against the graph!
 
 <div>
-    <img src="/assets/images/posts/cogat-neo4j/graph3.png" style="width:1000px"/>
+    <img src="/v1/assets/images/posts/cogat-neo4j/graph3.png" style="width:1000px"/>
 </div><br>
 
 This is a work in progress and it's not perfect, but I'm optimistic about the direction it's going in. If more ontologies / graph representations of knowledge were readily explorable, and sharable in this way, the semantic web would be a lot easiest to understand and navigate.
@@ -182,7 +182,7 @@ This is a work in progress and it's not perfect, but I'm optimistic about the di
 Why then should we bother to use a relational database via Django? I chose this strategy because it keeps the model of the Cognitive Atlas separate from any applications deploying or using it. It provides a solid infrastructure for serving a RESTful API:
 
 <div>
-    <img src="/assets/images/posts/cogat-neo4j/api.png" style="width:1000px"/>
+    <img src="/v1/assets/images/posts/cogat-neo4j/api.png" style="width:1000px"/>
 </div><br>
 
 and basic functionalities like storing information about users, and any (potential) future links to automated methods to populate it, etc.<br><br>
@@ -197,5 +197,5 @@ This example gets at a general strategy that is useful to consider when building
 The new version of the Cognitive Atlas has so far been a fun project I've worked on in free time, and I would say you can expect to see cool things develop in the next year or two, even if I'm not the one to push the final changes. In the meantime, I encourage all researchers working with behavioral or cognitive paradigms, perhaps using the [Experiment Factory](https://expfactory.github.io) or making an assertion about a brain map capturing a cognitive paradigm in the [NeuroVault database](http://www.neurovault.org), to do this properly by defining paradigms, cognitive concepts in the current version of the [Cognitive Atlas](http://www.cognitiveatlas.org). If you have feedback or want to contribute to developing this working example of integrating Neo4j and Django, please [jump in](https://github.com/vsoch/cogat-docker/issues). Even a cool idea would be a fantastic contribution. Time to get back to work! Well, let's just call this "work," I can't say I'm doing much more than walking around and smiling like an idiot in this final lap of graduate school. :)
 
 <div>
-    <img src="/assets/images/posts/cogat-neo4j/vanessa.jpg" style="width:1000px"/>
+    <img src="/v1/assets/images/posts/cogat-neo4j/vanessa.jpg" style="width:1000px"/>
 </div><br>

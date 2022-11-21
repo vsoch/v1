@@ -28,13 +28,13 @@ Docker seems to work by way of an API, meaning a protocol that the engine can us
 Oups. To upgrade curl on Ubuntu 14.04 you can't use standard package repos, so <a href="https://gist.github.com/fideloper/f72997d2e2c9fbe66459" target="_blank">here is a solution that worked for me</a> (basically install from source). Note that you need to open a new terminal for the changes to take effect. But more specifically, I wanted a solution that didn't need to use the Docker daemon, and I'm pretty sure this isn't what I wanted. However, anyone wanting to create an application that works with Docker on a user's machine, this is probably where you should look. There are a LOT of versions:
 
 <div>
-    <a href="/assets/images/posts/dockerapi/versions.png" target="_blank"><img src="/assets/images/posts/dockerapi/versions.png" style="width:300px"/></a>
+    <a href="/v1/assets/images/posts/dockerapi/versions.png" target="_blank"><img src="/v1/assets/images/posts/dockerapi/versions.png" style="width:300px"/></a>
 </div><br>
 
 and you will probably get confused as I did and click "learn by example" expecting the left sidebar to be specific to the API (I got there via a Google search) and then wonder why you are seeing tutorials for standard Docker:
 
 <div>
-    <a href="/assets/images/posts/dockerapi/example.png" target="_blank"><img src="/assets/images/posts/dockerapi/example.png" style="width:1000px"/></a>
+    <a href="/v1/assets/images/posts/dockerapi/example.png" target="_blank"><img src="/v1/assets/images/posts/dockerapi/example.png" style="width:1000px"/></a>
 </div><br>
 
 What's going on?! Rest assured, probably everyone is having similar confusions, because the organization of the documentation feels like being lost in wikiland. At least that's how I felt. I will point you to the <a href="https://docs.docker.com/engine/reference/api/remote_api_client_libraries" target="_blank">client API libraries</a> because likely you will be most diabolical digging directly into Python, Java, or your language of choice (they even have web components?! cool!) For my specific interest, I then found the <a href="https://docs.docker.com/v1.6/reference/api/docker-io_api" target="_blank">Docker Hub API</a>.
@@ -241,7 +241,7 @@ Authorization: Token signature=d041fcf64c26f526ac5db0fa6acccdf42e1f01e6,reposito
 Note that depending on how you do this in bash, you might see some nasty newline (^M) characters. This was actually for the second version of the token I tried to retrieve, but I saw similar ones for the call above:
 
 <div>
-    <a href="/assets/images/posts/dockerapi/newlines.png" target="_blank"><img src="/assets/images/posts/dockerapi/newlines.png" style="width:1000px"/></a>
+    <a href="/v1/assets/images/posts/dockerapi/newlines.png" target="_blank"><img src="/v1/assets/images/posts/dockerapi/newlines.png" style="width:1000px"/></a>
 </div><br>
 
 The solution I found to remove them was:
@@ -322,7 +322,7 @@ Out[148]: {'x-docker-token': 'signature=f960e1e0e745965069169dbb78194bd3a4e8a10c
 When I saw this I said "Great! It must just be a redirect, and maybe I can use that (I think newer URL) to make the initial call." But when I change `registry.hub.docker.com` to `registry-1.docker.io`, it doesn't work. Boo. I'd really like to get, for example, the call `https://registry-1.docker.io/v2/ubuntu/manifests/latest` to work, because it's counterpart with the older endpoint (below) doesn't seem to work (*sadface*). I bet with the right token, and a working call, the tag "latest" will be found here, and resolve the issues I was having using the first token and call. This call for "latest" really should work :/
 
 <div>
-    <a href="/assets/images/posts/dockerapi/expectation1.png" target="_blank"><img src="/assets/images/posts/dockerapi/expectation1.png" style="width:1000px"/></a>
+    <a href="/v1/assets/images/posts/dockerapi/expectation1.png" target="_blank"><img src="/v1/assets/images/posts/dockerapi/expectation1.png" style="width:1000px"/></a>
 </div><br>
 
 

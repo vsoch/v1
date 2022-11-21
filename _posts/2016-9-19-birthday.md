@@ -44,5 +44,5 @@ For future passed and what may come <br>
 Ask me when I'm thirty one :) <br>
 
 <div>
-    <a href="/assets/images/posts/birthday/919.png" target="_blank"><img src="/assets/images/posts/birthday/919.png" style="width:200px"/></a>
+    <a href="/v1/assets/images/posts/birthday/919.png" target="_blank"><img src="/v1/assets/images/posts/birthday/919.png" style="width:200px"/></a>
 </div><br>

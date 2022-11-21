@@ -23,6 +23,6 @@ The boy understood when he looked down at his feet. His sampling of the space wa
 
 He left from the market; he found what he sought. Unexpected by all, just one orange he bought. The burden of price was no longer useful to him, nor the incessant expectation to react to such whim. It was the best purchase he'd made, because it wasn't driven by fear. It was his acceptance of blindness that would make him a seer. The journey for himself was his knowledge and heart. And he'd found the answer one orange apart.
 
-![oranges-apart](/assets/images/posts/oranges-apart/orange.JPG)
+![oranges-apart](/v1/assets/images/posts/oranges-apart/orange.JPG)
 
 <small style="font-style:oblique;color:orangered">for my dear friend</small>

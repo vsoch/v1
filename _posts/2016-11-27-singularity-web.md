@@ -115,7 +115,7 @@ Serving HTTP on 0.0.0.0 port 9999 ...
 ```
 
 <div>
-    <img src="/assets/images/posts/singularity-web/nginx-basic.png" style="width:800px"/>
+    <img src="/v1/assets/images/posts/singularity-web/nginx-basic.png" style="width:800px"/>
 </div><br>
 
 or I can bind a folder on my local computer with static web files (the `.` refers to the present working directory, and `-B` or `--bind` are the Singularity bind parameters) to my container and serve them the same!
@@ -148,7 +148,7 @@ Preview experiment at localhost:9684
 ```
 
 <div>
-    <img src="/assets/images/posts/singularity-web/expfactory.png" style="width:800px"/>
+    <img src="/v1/assets/images/posts/singularity-web/expfactory.png" style="width:800px"/>
 </div><br>
 
 
@@ -156,7 +156,7 @@ Preview experiment at localhost:9684
 Finally,  <a href="https://github.com/vsoch/singularity-web/tree/master/nginx-jupyter" target="_blank">nginx-jupyter</a> fits nicely with the daily life of most academics and scientists that like to use <a href="http://jupyter.org/" target="_blank">Jupyter Notebooks</a>. This example will show you how to put the entire Jupyter stuffs and python in a container, and then run it to start an interactive notebook in your browser:
 
 <div>
-    <img src="/assets/images/posts/singularity-web/jupyter.png" style="width:800px"/>
+    <img src="/v1/assets/images/posts/singularity-web/jupyter.png" style="width:800px"/>
 </div><br>
 
 The ridiculously cool thing in this example is that when you shut down the notebook, the notebook files are saved inside the container. If you want to share it? Just send over the entire thing! The other cool thing? If we run it this way:

@@ -14,7 +14,7 @@ The biggest challenge with developing tools for neuroimaging researchers is the 
 I want to be able to do the smaller stuff in my web-browser. It's amazing how many posts I see on different neuroimaging lists about doing basic operations with headers or the data, and visualization is so low priority that nobody gives it the time of day. One of my favorite things to do is develop web-based visualizations. [Most of my work](http://www.github.com/vsoch/pybraincompare) relies on some python backend to do stuff first, and then render with web-stuffs. I also tried making a small app to [show local images in the browser](http://www.npmjs.com/package/brain-browser), or as a default [directory view](https://github.com/vsoch/niindex). But this isn't good enough. I realized some time ago that these tools are only going to be useful if they are drag and drop. I want to be able to load, view header details, visualize in a million cool ways, and export different manipulations of my data without needing to clone a github repo, log in anywhere, or do anything beyond dragging a file over a box. So this weekend, I started some basic learning to figure out how to do that. This is the start of Nifti-drop:
 
 
-<img src="/assets/images/posts/nifti-drop/nifti-drop.png" style="width:100%">
+<img src="/v1/assets/images/posts/nifti-drop/nifti-drop.png" style="width:100%">
 #[DEMO](http://vsoch.github.io/nifti-drop)  
   
   

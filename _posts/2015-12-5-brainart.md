@@ -23,15 +23,15 @@ This is closer to a "true" data image because it was generated from actual brain
 
 You can skip over everything and just look at the <a href="http://vsoch.github.io/brainart">gallery</a>, or the <a href="http://www.github.com/vsoch/brainart">code</a>. It's under development and there are many things I am not happy with (detailed below), but it does pretty well for this early version. For example, here is "The Scream":
 
-<img src="/assets/images/posts/brainart/screamblack.png" style="width:100%">
+<img src="/v1/assets/images/posts/brainart/screamblack.png" style="width:100%">
 
 This isn't just any static image. Let's look a little closer...
 
-<img src="/assets/images/posts/brainart/scream2.png" style="width:100%">
+<img src="/v1/assets/images/posts/brainart/scream2.png" style="width:100%">
 
 Matter of fact, each "pixel" is a tiny brain:
 
-<img src="/assets/images/posts/brainart/scream3.png" style="width:100%">
+<img src="/v1/assets/images/posts/brainart/scream3.png" style="width:100%">
 
 And when you see them <a href="http://vsoch.github.io/brainart">interactively</a>, you can click on any brain to be taken to the data from which it was generated in the NeuroVault database. BrainArt!
 
@@ -46,7 +46,7 @@ UPDATE 12/6/2015: The color tables were extended to include brainmaps of single 
 
 The generation could still be optimized. It's really slow. Embarrassingly, I have <a href="https://github.com/vsoch/brainart/blob/master/brainart/utils.py#L89">for loops</a>. The original implementation did not generate x and y to match the specific sampling rate specified by the user, and this has also been fixed.
 
-<img src="/assets/images/posts/brainart/girl_with_pearl_black.png" style="width:100%">
+<img src="/v1/assets/images/posts/brainart/girl_with_pearl_black.png" style="width:100%">
 
 I spent an entire weekend doing this, and although I have regrets about not finishing "real" work, this is pretty awesome. I should have more common sense and not spend so much time on something no one will use except for me... oh well! It would be fantastic to have different color lookup tables, or even sagittal and/or coronal images. Feel free to contribute if you are looking for some fun! :)
 
@@ -107,4 +107,4 @@ brainart --input /home/vanessa/Desktop/flower.jpg --sample 100
 ## Contribute!
 The [gallery](http://vsoch.github.io/brainart) is the index file hosted on the github pages for this repo. See [instructions](https://github.com/vsoch/brainart#gallery) for submitting something to the gallery. While I don't have a server to host generation of these images dynamically in the browser, something like this could easily be integrated into [NeuroVault](http://www.neurovault.org) for users to create art from their brainmaps, but methinks nobody would want this except for me :)
 
-<img src="/assets/images/posts/brainart/spiderman_zoom1.png" style="width:100%">
+<img src="/v1/assets/images/posts/brainart/spiderman_zoom1.png" style="width:100%">
